@@ -1,0 +1,168 @@
+.header .tips {
+  width: 100%;
+  height: 40px;
+  background: #000;
+}
+.header .tips .tips-c {
+  width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 13px;
+  line-height: 40px;
+}
+.header .tips p:first-child {
+  float: left;
+}
+.header .tips p:last-child {
+  float: right;
+}
+.header .menu {
+  height: 50px;
+  line-height: 50px;
+}
+.header .menu .menu-c {
+  width: 1200px;
+  margin: 0 auto;
+}
+.header .menu .menu-c .logo {
+  width: 100px;
+  height: 50px;
+  float: left;
+}
+.header .menu .menu-c ul, .header .menu .menu-c ul li {
+  float: left;
+}
+.header .menu .menu-c ul li {
+  margin: 0px 50px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main {
+  background: #F5F7FA;
+}
+.main .main-c {
+  width: 1200px;
+  margin: 0 auto;
+}
+.main .main-c .menu .menu-title {
+  padding-top: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.main .main-c .menu .menu-title p {
+  float: left;
+  font-size: 20px;
+}
+.main .main-c .menu .menu-title span {
+  font-size: 14px;
+  color: #7C87A3;
+  margin-left: 5px;
+  line-height: 26px;
+}
+.main .main-c .menu .menu-item {
+  box-sizing: border-box;
+  padding: 20px;
+  background: #fff;
+}
+.main .main-c .menu .menu-item li {
+  line-height: 60px;
+}
+.main .main-c .menu .menu-item li .menu-head {
+  font-size: 18px;
+  font-weight: 400;
+}
+.main .main-c .menu .menu-item li .btn-item button {
+  margin-right: 20px;
+}
+.main .main-c .menu-option .menu-item {
+  border-top: 1px solid #3E97DF;
+  padding: 28px;
+}
+.main .main-c .menu-option .menu-item .btn li {
+  float: left;
+  font-size: 18px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0px 3px;
+  border: 1px solid #DEDEDE;
+  color: #A0A0A0;
+  margin-right: 24px;
+}
+.main .main-c .menu-option .menu-item .list {
+  float: left;
+  font-size: 19px;
+  font-weight: 400;
+  color: #6F6F6F;
+  overflow: hidden;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+.main .main-c .menu-option .menu-item .list li {
+  width: 788px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+.main .main-c .menu-option .menu-item .list li .list-item {
+  float: left;
+  width: 63%;
+  margin-bottom: 6px;
+}
+.main .main-c .menu-option .menu-item .list li .list-price {
+  float: right;
+}
+.main .main-c .menu-option .menu-item .btn:last-child li {
+  border-color: #3E97DF;
+  color: #3E97DF;
+}
+.main .main-c .menu-option .menu-item .info-detail {
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-c .menu-option .menu-item .info-detail .content p {
+  font-size: 30px;
+  color: #3E97DF;
+}
+.main .main-c .menu-option .menu-item .info-detail .content p span {
+  color: #787878;
+  font-size: 24px;
+}
+.main .main-c .pagnation {
+  margin-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.foot {
+  height: 180px;
+  background: #262839;
+  padding: 30px 0px;
+  color: #fff;
+}
+.foot .foot-c {
+  width: 1200px;
+  margin: 0 auto;
+}
+.foot .foot-c ul li {
+  float: left;
+  width: 33.3%;
+}
+.foot .foot-c ul li p {
+  line-height: 20px;
+  margin-top: 20px;
+}
+.foot .foot-c .record {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */
