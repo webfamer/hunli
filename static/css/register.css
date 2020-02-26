@@ -1,0 +1,44 @@
+.main .main-c {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-c .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.main .main-c .content {
+  border: 1px solid #686868;
+  padding: 40px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-c .content .content-r {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .main-c .content .content-r .title {
+  font-size: 24px;
+  color: #3E97DF;
+  margin-bottom: 50px;
+}
+.main .main-c .content .content-r img {
+  width: 136px;
+  height: 38px;
+}
+.main .main-c .content .content-r .loginBtn {
+  margin-top: 50px;
+}
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/reset.css" />
+    <link rel="stylesheet" href="./static/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="./static/css/login.css" />
+</head>
+<body>
+    <div class="main">
+        <div class="main-c">
+            <div class="layui-row logo">
+                <div class="layui-col-md9">
+                  <img src="./static/img/logo.png" alt="">
+                </div>
+                <div class="layui-col-md3">
+                </div>
+              </div>
+              <div class="content">
+                  <div class="content-l">
+                    <img src="./static/img/bg.png" alt="">
+                  </div>
+                  <div class="content-r">
+                      <p class="title">用户登陆</p>
+                      <form class="layui-form" action="">
+                        <div class="layui-form-item">                          
+                            <input type="text" style="width:300px" name="title" required  lay-verify="required" placeholder="登陆手机号" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-item">
+                            <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="tips">
+                            <span>注册</span>
+                            <span>找回密码？</span>
+                        </div>
+                       
+                        </form>
+
+                        <button type="button" class="layui-btn layui-btn-lg layui-btn-normal loginBtn" style="width: 300px;">立即登陆</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <script src="./static/lib/layui/layui.js"></script>
+</body>
+</html>
