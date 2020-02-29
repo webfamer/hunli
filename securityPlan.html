@@ -35,7 +35,8 @@
     <div class="main-c">
       <div class="menu">
         <div class="menu-title">
-          <p>周边短途游-安联境内旅行保障计划</p>
+          <p>周边短途游-安联境内旅行保障计划
+          </p>
         </div>
         <div class="menu-item">
           <ul>
@@ -45,12 +46,12 @@
                   <span class="menu-head">方案选择：</span>
                 </div>
 
-                <div class="layui-col-md9 btn-item" style="padding-left: 15px;">
-                  <button class="layui-btn layui-btn-normal">安联境内旅行保障计划一</button>
+                <div class="layui-col-md9 btn-item" style="padding-left: 15px;" id="btn1">
+                  <button class="layui-btn layui-btn-primary">安联境内旅行保障计划一</button>
                   <button class="layui-btn layui-btn-primary">安联境内旅行保障计划二</button>
                   <button class="layui-btn layui-btn-primary">安联境内旅行保障计划三</button>
-                  <a href="">计划对比</a>
                 </div>
+                <a href="javascript:;" onclick="loadPassageInfo()">计划对比</a>
               </div>
             </li>
             <li>
@@ -59,9 +60,9 @@
                   <span class="menu-head">承保年龄：</span>
                 </div>
 
-                <div class="layui-col-md9 btn-item" style="padding-left: 15px;">
+                <div class="layui-col-md9 btn-item" style="padding-left: 15px;" id="btn2">
                   <button class="layui-btn layui-btn-primary">成年人（18-90周岁）</button>
-                  <button class="layui-btn layui-btn-normal">未成年人（60-17周岁）</button>
+                  <button class="layui-btn layui-btn-primary">未成年人（60-17周岁）</button>
                 </div>
               </div>
             </li>
@@ -71,7 +72,7 @@
                   <span class="menu-head">保险期间：</span>
                 </div>
 
-                <div class="layui-col-md9 btn-item" style="padding-left: 15px;">
+                <div class="layui-col-md9 btn-item" style="padding-left: 15px;" id="btn3">
                   <button class="layui-btn layui-btn-primary">1-5天</button>
                   <button class="layui-btn layui-btn-primary">6-8天</button>
                   <button class="layui-btn layui-btn-primary">9-15天</button>
@@ -201,7 +202,46 @@
   </div>
 
   <!-- <div id="demo0" class="pagnation"></div> -->
-  </div>
+  <div class="mark" style="display: none;">
+      <div class="dialog">
+          <p class="title">周边短途游-安联境内旅行保障计划比对
+            <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeDialog()">X</span>
+          </p>
+
+          <table class="layui-table" lay-size="lg">
+              <colgroup>
+                  <col width="150">
+                  <col width="200">
+                  <col>
+              </colgroup>
+              <thead>
+                  <tr>
+                      <th>保障利益</th>
+                      <th>保险金额（人民币）<br>安联境内旅游保障计划一</th>
+                      <th>安联境内旅游保障计划一</th>
+                      <th>安联境内旅游保障计划一</th>
+                      <th>安联境内旅游保障计划一</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>意外身故及伤残</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                  </tr>
+                  <tr>
+                      <td>公共交通工具意外身故及伤残</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                      <td>100,000</td>
+                  </tr>
+              </tbody>
+          </table>
+
+      </div>
   </div>
   <div class="foot">
     <div class="foot-c">
@@ -227,8 +267,36 @@
     </div>
   </div>
   <script src="./static/lib/layui/layui.js"></script>
+  <script src="./static/lib/jquery3.2.1.js"></script>
   <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
   <script>
+    // jQuery
+    $("#btn1").children().click(function () {
+  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
+    color:"#555",background:"#fff"
+  })
+  })
+  $("#btn2").children().click(function () {
+  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
+    color:"#555",background:"#fff"
+  })
+  })
+  $("#btn3").children().click(function () {
+  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
+    color:"#555",background:"#fff"
+  })
+  })
+
+  function loadPassageInfo() {
+            var mark = document.getElementsByClassName("mark")[0];
+            console.log(mark)
+            mark.style.display = "block"
+        }
+        function closeDialog() {
+            var mark = document.getElementsByClassName("mark")[0];
+            mark.style.display = "none"
+        }
+    // -------
     layui.use(['laypage', 'layer'], function () {
       var laypage = layui.laypage
         , layer = layui.layer;
