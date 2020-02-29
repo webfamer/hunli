@@ -205,51 +205,58 @@
                             <div class="layui-col-md2">
                                 手机号
                             </div>
-                           
+
                         </div>
-                        <form class="layui-form" action="">
-                            <div class="layui-row layui-col-space30">
-                                <div class="layui-col-md2">
-                                    <div class="layui-form-item">
-                                        <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input">
+                        <div id="customerBox">
+                            <div id="customerList">
+                                <form class="layui-form " action="">
+                                    <div class="layui-row layui-col-space30">
+                                        <div class="layui-col-md2">
+                                            <div class="layui-form-item">
+                                                <input type="text" name="title" required lay-verify="required"
+                                                    placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-md2">
+                                            <div class="layui-form-item">
+                                                <select name="city" lay-verify="required">
+                                                    <option value=""></option>
+                                                    <option value="0">北京</option>
+                                                    <option value="1">上海</option>
+                                                    <option value="2">广州</option>
+                                                    <option value="3">深圳</option>
+                                                    <option value="4">杭州</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-md2">
+                                            <div class="layui-form-item">
+                                                <input type="text" name="title" required lay-verify="required"
+                                                    placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-md2">
+                                            _____________
+                                        </div>
+                                        <div class="layui-col-md2">
+                                            <div class="layui-form-item">
+                                                <input type="text" name="title" required lay-verify="required"
+                                                    placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-md2">
+                                            <button class="layui-btn  layui-btn-danger del"><a href="javascript:;"
+                                                    style="color:#fff;">删除</a></button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="layui-col-md2">
-                                    <div class="layui-form-item">
-                                        <select name="city" lay-verify="required">
-                                            <option value=""></option>
-                                            <option value="0">北京</option>
-                                            <option value="1">上海</option>
-                                            <option value="2">广州</option>
-                                            <option value="3">深圳</option>
-                                            <option value="4">杭州</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="layui-col-md2">
-                                    <div class="layui-form-item">
-                                        <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input">
-                                    </div>
-                                </div>
-                                <div class="layui-col-md2">
-                                    _____________
-                                </div>
-                                <div class="layui-col-md2">
-                                    <div class="layui-form-item">
-                                        <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input">
-                                    </div>
-                                </div>
-                                <div class="layui-col-md2">
-                                       <button class="layui-btn  layui-btn-danger">删除</button>
-                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
+
                         <div class="btnOption">
-                            <button type="button" class="layui-btn layui-btn-normal">继续增加游客</button>
-                            <button type="button" class="layui-btn layui-btn-primary" onclick="loadPassageInfo()">载入订单游客</button>
+                            <button type="button" class="layui-btn layui-btn-normal" id="addCustomer">继续增加游客</button>
+                            <button type="button" class="layui-btn layui-btn-primary"
+                                onclick="loadPassageInfo()">载入订单游客</button>
                             <button type="button" class="layui-btn layui-btn-primary">批量导入游客</button>
                             <span class="label-tips">导入帮助</span>
                         </div>
@@ -259,11 +266,11 @@
             </div>
             <div class="orderList">
                 <div class="order-btn">
-                        <span>合计：</span>
-                        <span class="price">128元</span>
-                        <button type="button" class="layui-btn layui-btn-lg layui-btn-normal">提交预定</button>
+                    <span>合计：</span>
+                    <span class="price">128元</span>
+                    <button type="button" class="layui-btn layui-btn-lg layui-btn-normal">提交预定</button>
                 </div>
-                   
+
             </div>
 
         </div>
@@ -295,121 +302,123 @@
         </div>
     </div>
     <div class="mark">
-            <div class="dialog">
-                <p class="title">载入游客信息</p>
-                <div class="layui-row">
-                    <form action="">
-                        <div class="layui-col-md2 layui-col-md-offset1">
-                            <div class="layui-form-item">
-                                <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
-                                    autocomplete="off" class="layui-input" />
-                            </div>
+        <div class="dialog">
+            <span style="float: right;font-size: 24px;margin-top: 14px;cursor:pointer" onclick="closeDialog()">X</span>
+            <p class="title">载入游客信息</p>
+            <div class="layui-row">
+                <form action="">
+                    <div class="layui-col-md2 layui-col-md-offset1">
+                        <div class="layui-form-item">
+                            <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                                autocomplete="off" class="layui-input" />
                         </div>
-                        <div class="layui-col-md2 layui-col-md-offset1">
-                            <div class="layui-form-item">
-                                <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
-                                    autocomplete="off" class="layui-input" />
-                            </div>
-                        </div>
-                    </form>
-                    <div class="layui-col-md3 layui-col-md-offset3">
-                        <button type="button" class="layui-btn layui-btn-normal">
-                            查询
-                        </button>
-                    </div>
-                </div>
-                <div class="layui-row list">
-                    <form class="layui-form" action="">
-                        <div class="layui-col-md1 layui-col-md-offset1 ">
-                            <div class="layui-form-item">
-                                <input type="checkbox" name="" lay-skin="primary" />
-                            </div>
-                        </div>
-                        <div class="layui-col-md1">
-                            <span>姓名</span>
-                        </div>
-                        <div class="layui-col-md2">
-                            证件类型
-                        </div>
-
-                        <div class="layui-col-md3">
-                            证件号码
-                        </div>
-                        <div class="layui-col-md2">
-                            出生日期
-                        </div>
-                        <div class="layui-col-md2">
-                            手机号
-                        </div>
-                    </form>
-                </div>
-                <div class="layui-row list">
-                    <form class="layui-form" action="">
-                        <div class="layui-col-md1 layui-col-md-offset1 ">
-                            <div class="layui-form-item">
-                                <input type="checkbox" name="" lay-skin="primary" />
-                            </div>
-                        </div>
-                        <div class="layui-col-md1">
-                            <span>张三</span>
-                        </div>
-                        <div class="layui-col-md2">
-                            身份证
-                        </div>
-
-                        <div class="layui-col-md3">
-                            0202020202848291
-                        </div>
-                        <div class="layui-col-md2">
-                            19900212
-                        </div>
-                        <div class="layui-col-md2">
-                            12911223341
-                        </div>
-                    </form>
-                </div>
-                <div class="layui-row list">
-                    <form class="layui-form" action="">
-                        <div class="layui-col-md1 layui-col-md-offset1 ">
-                            <div class="layui-form-item">
-                                <input type="checkbox" name="" lay-skin="primary" />
-                            </div>
-                        </div>
-                        <div class="layui-col-md1">
-                            <span>张三</span>
-                        </div>
-                        <div class="layui-col-md2">
-                            身份证
-                        </div>
-
-                        <div class="layui-col-md3">
-                            0202020202848291
-                        </div>
-                        <div class="layui-col-md2">
-                            19900212
-                        </div>
-                        <div class="layui-col-md2">
-                            12911223341
-                        </div>
-                    </form>
-                </div>
-                <div class="layui-row btn">
-                    <div class="layui-col-md6 layui-col-md-offset1" >
-                        <div id="demo2" class="pagination"></div>
                     </div>
                     <div class="layui-col-md2 layui-col-md-offset1">
-                        <i class="layui-icon layui-icon-cart-simple" style="font-size: 30px; color: #1E9FFF;"></i>
-                        <span style="font-size: 18px; color: #1E9FFF;">22</span>
+                        <div class="layui-form-item">
+                            <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                                autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-col-md3 layui-col-md-offset3">
+                    <button type="button" class="layui-btn layui-btn-normal">
+                        查询
+                    </button>
+                </div>
+            </div>
+            <div class="layui-row list">
+                <form class="layui-form" action="">
+                    <div class="layui-col-md1 layui-col-md-offset1 ">
+                        <div class="layui-form-item">
+                            <input type="checkbox" name="" lay-skin="primary" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md1">
+                        <span>姓名</span>
                     </div>
                     <div class="layui-col-md2">
-                        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">
-                            确定载入
-                        </button>
+                        证件类型
                     </div>
+
+                    <div class="layui-col-md3">
+                        证件号码
+                    </div>
+                    <div class="layui-col-md2">
+                        出生日期
+                    </div>
+                    <div class="layui-col-md2">
+                        手机号
+                    </div>
+                </form>
+            </div>
+            <div class="layui-row list">
+                <form class="layui-form" action="">
+                    <div class="layui-col-md1 layui-col-md-offset1 ">
+                        <div class="layui-form-item">
+                            <input type="checkbox" name="" lay-skin="primary" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md1">
+                        <span>张三</span>
+                    </div>
+                    <div class="layui-col-md2">
+                        身份证
+                    </div>
+
+                    <div class="layui-col-md3">
+                        0202020202848291
+                    </div>
+                    <div class="layui-col-md2">
+                        19900212
+                    </div>
+                    <div class="layui-col-md2">
+                        12911223341
+                    </div>
+                </form>
+            </div>
+            <div class="layui-row list">
+                <form class="layui-form" action="">
+                    <div class="layui-col-md1 layui-col-md-offset1 ">
+                        <div class="layui-form-item">
+                            <input type="checkbox" name="" lay-skin="primary" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md1">
+                        <span>张三</span>
+                    </div>
+                    <div class="layui-col-md2">
+                        身份证
+                    </div>
+
+                    <div class="layui-col-md3">
+                        0202020202848291
+                    </div>
+                    <div class="layui-col-md2">
+                        19900212
+                    </div>
+                    <div class="layui-col-md2">
+                        12911223341
+                    </div>
+                </form>
+            </div>
+            <div class="layui-row btn">
+                <div class="layui-col-md6 layui-col-md-offset1">
+                    <div id="demo2" class="pagination"></div>
+                </div>
+                <div class="layui-col-md2 layui-col-md-offset1">
+                    <i class="layui-icon layui-icon-cart-simple" style="font-size: 30px; color: #1E9FFF;"></i>
+                    <span style="font-size: 18px; color: #1E9FFF;">22</span>
+                </div>
+                <div class="layui-col-md2">
+                    <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">
+                        确定载入
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
     <script src="./static/lib/layui/layui.js"></script>
+    <script src="./static/lib/jquery3.2.1.js"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
     <script>
         layui.use("form", function () {
@@ -421,10 +430,19 @@
                 return false;
             });
         });
+        function resetForm() { //重置表单
+            console.log(11)
+            layui.use("form", function () {
+                var form = layui.form;
+                form.render();
+            });
+        }
+
+
         // -------------------------
 
-                //    分页
-                layui.use(["laypage", "layer"], function () {
+        //    分页
+        layui.use(["laypage", "layer"], function () {
             var laypage = layui.laypage,
                 layer = layui.layer;
 
@@ -439,14 +457,33 @@
                 }
             });
         });
-        function loadPassageInfo(){
-        var mark = document.getElementsByClassName("mark")[0];
-        console.log(mark)
-        mark.style.display="block"
-    }
-    </script>
-    <script>
+        function loadPassageInfo() {
+            var mark = document.getElementsByClassName("mark")[0];
+            console.log(mark)
+            mark.style.display = "block"
+        }
+        function closeDialog() {
+            var mark = document.getElementsByClassName("mark")[0];
+            mark.style.display = "none"
+        }
+        function deleteCustomer() {
+            $('#customerBox').on('click', '.del', function () {
+                //删除列表
+                $(this).parent().parent().remove()
+            })
+        }
+        $(function () {
+            $("#addCustomer").click(function () { //增加列表
+                var newHtml = $("#customerBox").html() + $('#customerList').html();
+                $("#customerBox").html(newHtml)
+                resetForm();
+                deleteCustomer()
+            })
+            //删除列表
 
+            deleteCustomer()
+
+        })
     </script>
 </body>
 
