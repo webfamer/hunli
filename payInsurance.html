@@ -45,7 +45,7 @@
                                 <span class="form-title">投保人信息</span>
                             </div>
                             <div class="layui-col-md2 layui-col-md-offset1">
-                                <span class="link">清空重填 ？</span>
+                                <span class="link" id="cleanInput">清空重填 ？</span>
                             </div>
                         </div>
                     </div>
@@ -56,23 +56,20 @@
                                     <label class="layui-form-label">投保人姓名:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input" />
+                                            placeholder="请输入标题" autocomplete="off" class="layui-input" id="name"/>
                                     </div>
                                 </div>
                                 <div class="layui-col-md4 topDistance">
-                                    <span class="label-tips" style="color:#3E97DF;">选择其他投保人</span>
+                                    <span class="label-tips" style="color:#3E97DF;" onclick="openCustomer()">选择其他投保人</span>
                                 </div>
                                 <div class="layui-col-md7 topDistance">
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">证件：</label>
                                         <div class="layui-input-block">
-                                            <select name="city" lay-verify="required">
+                                            <select name="city" lay-verify="required" id="idType" value="0">
                                                 <option value=""></option>
-                                                <option value="0">北京</option>
-                                                <option value="1">上海</option>
-                                                <option value="2">广州</option>
-                                                <option value="3">深圳</option>
-                                                <option value="4">杭州</option>
+                                                <option value="0">身份证</option>
+                                                <option value="1">护照</option>
                                             </select>
                                         </div>
                                     </div>
@@ -81,17 +78,17 @@
                                     <label class="layui-form-label">手机号码：</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input" />
+                                            placeholder="请输入标题" autocomplete="off" class="layui-input" id="phone"/>
                                     </div>
                                 </div>
                                 <div class="layui-col-md2 topDistance">
                                     <span class="label-tips">接收通知</span>
                                 </div>
                                 <div class="layui-col-md7 topDistance">
-                                    <label class="layui-form-label">电子邮箱：</label>
+                                    <label class="layui-form-label" >电子邮箱：</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="title" required lay-verify="required"
-                                            placeholder="请输入标题" autocomplete="off" class="layui-input" />
+                                            placeholder="请输入标题" autocomplete="off" class="layui-input" id="email" />
                                     </div>
                                 </div>
                                 <div class="layui-col-md2 topDistance">
@@ -418,6 +415,81 @@
             </div>
         </div>
     </div>
+    <div class="mark" style="display: none;" id="otherCustomer">
+        <div class="dialog">
+            <p class="title">选择其他投保人
+                <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeCustomer()">X</span>
+            </p>
+
+            <div class="layui-row list">
+
+
+                <div class="layui-col-md1 layui-col-md-offset1">
+                    <span>姓名</span>
+                </div>
+                <div class="layui-col-md2">
+                    证件类型
+                </div>
+
+                <div class="layui-col-md2">
+                    证件号码
+                </div>
+                <div class="layui-col-md2">
+                    手机号
+                </div>
+                <div class="layui-col-md2">
+                    电子邮箱
+                </div>
+
+            </div>
+            <div class="layui-row list">
+
+                <div class="layui-col-md1 layui-col-md-offset1">
+                    <span>张三</span>
+                </div>
+                <div class="layui-col-md2">
+                    身份证
+                </div>
+
+                <div class="layui-col-md2">
+                    0202020202848291
+                </div>
+                <div class="layui-col-md2">
+                    19900212
+                </div>
+                <div class="layui-col-md2">
+                    ————————
+                </div>
+                <div class="layui-col-md2">
+                    <button type="button" class="layui-btn layui-btn-normal layui-btn layui-btn-sm choseCustomer" data-index=0>选择</button>
+                </div>
+            </div>
+            <div class="layui-row list">
+
+
+                <div class="layui-col-md1 layui-col-md-offset1">
+                    <span>张三</span>
+                </div>
+                <div class="layui-col-md2">
+                    身份证
+                </div>
+
+                <div class="layui-col-md2">
+                    0202020202848291
+                </div>
+                <div class="layui-col-md2">
+                    19900212
+                </div>
+                <div class="layui-col-md2">
+                    a@ke.com
+                </div>
+                <div class="layui-col-md2">
+                    <button type="button" class="layui-btn layui-btn-normal layui-btn layui-btn-sm choseCustomer" data-index=1>选择</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="./static/lib/layui/layui.js"></script>
     <script src="./static/lib/jquery3.2.1.js"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
@@ -467,6 +539,17 @@
             var mark = document.getElementsByClassName("mark")[0];
             mark.style.display = "none"
         }
+
+        otherCustomer
+        function openCustomer() { //选择投保人
+            var mark = document.getElementById("otherCustomer");
+            console.log(mark)
+            mark.style.display = "block"
+        }
+        function closeCustomer() { //关闭投保人
+            var mark = document.getElementById("otherCustomer");
+            mark.style.display = "none"
+        }
         function deleteCustomer() {
             $('#customerBox').on('click', '.del', function () {
                 //删除列表
@@ -484,6 +567,38 @@
 
             deleteCustomer()
 
+        })
+        let listdata = [{
+            name:'张三',
+            idCard:'0202020202848291',
+            idType:'0',
+            phone:'19900212',
+            email:'------'
+        },{
+            name:'张三',
+            idCard:'0202020202848291',
+            idType:'0',
+            phone:'19900212',
+            email:'a@ke.com'
+        }]
+        $(function(){
+            $(".choseCustomer").on('click',function(){
+                var item = $(this).data("index");
+                $("#name").val(listdata[item].name)
+              $("#idType").val(listdata[item].idType)
+                $("#phone").val(listdata[item].phone)
+                $("#email").val(listdata[item].email)
+                resetForm();
+                closeCustomer()
+            })
+            $("#cleanInput").on('click',function(){
+                $("#name").val('')
+                // $("#idType  option[value='10']").attr("selected","true");
+                $("#idType").val('')
+                $("#phone").val('')
+                $("#email").val('')
+                resetForm();
+            })
         })
     </script>
 </body>

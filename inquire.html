@@ -127,7 +127,7 @@
                                     </div>
                                     <div class="btn">
                                         <div class="layui-col-md3 layui-col-md-offset1">
-                                            <button type="button" class="layui-btn layui-btn-normal">
+                                            <button type="button" class="layui-btn layui-btn-normal" onclick="loadPassageInfo()">
                                                 支付
                                             </button>
                                         </div>
@@ -186,7 +186,7 @@
                                     </div>
                                     <div class="btn">
                                         <div class="layui-col-md3 layui-col-md-offset1">
-                                            <button type="button" class="layui-btn layui-btn-normal">
+                                            <button type="button" class="layui-btn layui-btn-normal" onclick="loadPassageInfo()">
                                                 支付
                                             </button>
                                         </div>
@@ -207,6 +207,27 @@
                     </div>
                     <div id="demo1" class="pagination"></div>
                 </div>
+            </div>
+        </div>
+        <div class="mark" style="display: none;">
+            <div class="dialog">
+                <p class="title">支付方式
+                  <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeDialog()">X</span>
+                </p>
+      
+                <div class="layui-row">
+                    <div class="layui-col-md6">
+                      <img src="./static/img/zfb.jpg" alt="">
+                      <br>
+                      支付宝
+                    </div>
+                    <div class="layui-col-md6">
+                      <img src="./static/img/wx.jpg" alt="">
+                      <br>
+                      微信支付
+                    </div>
+                  </div>
+      
             </div>
         </div>
         <div class="foot">
@@ -232,79 +253,6 @@
                     </li>
                 </ul>
                 <p class="record">2020网站备案/许可证号：津ICP备88888号-1 9929平台</p>
-            </div>
-        </div>
-        <div class="mark" style="display: none;">
-            <div class="dialog">
-                <p class="title">选择其他投保人</p>
-
-                <div class="layui-row list">
-
-
-                    <div class="layui-col-md1 layui-col-md-offset1">
-                        <span>姓名</span>
-                    </div>
-                    <div class="layui-col-md2">
-                        证件类型
-                    </div>
-
-                    <div class="layui-col-md2">
-                        证件号码
-                    </div>
-                    <div class="layui-col-md2">
-                        手机号
-                    </div>
-                    <div class="layui-col-md2">
-                        电子邮箱
-                    </div>
-
-                </div>
-                <div class="layui-row list">
-
-                    <div class="layui-col-md1 layui-col-md-offset1">
-                        <span>张三</span>
-                    </div>
-                    <div class="layui-col-md2">
-                        身份证
-                    </div>
-
-                    <div class="layui-col-md2">
-                        0202020202848291
-                    </div>
-                    <div class="layui-col-md2">
-                        19900212
-                    </div>
-                    <div class="layui-col-md2">
-                        ————————
-                    </div>
-                    <div class="layui-col-md2">
-                        <button type="button" class="layui-btn layui-btn-normal layui-btn layui-btn-sm">选择</button>
-                    </div>
-                </div>
-                <div class="layui-row list">
-
-
-                    <div class="layui-col-md1 layui-col-md-offset1">
-                        <span>张三</span>
-                    </div>
-                    <div class="layui-col-md2">
-                        身份证
-                    </div>
-
-                    <div class="layui-col-md2">
-                        0202020202848291
-                    </div>
-                    <div class="layui-col-md2">
-                        19900212
-                    </div>
-                    <div class="layui-col-md2">
-                        a@ke.com
-                    </div>
-                    <div class="layui-col-md2">
-                        <button type="button" class="layui-btn layui-btn-normal layui-btn layui-btn-sm">选择</button>
-                    </div>
-
-                </div>
             </div>
         </div>
         <div class="mark" style="display: none;">
@@ -350,6 +298,17 @@
     </div>
     <script src="./static/lib/layui/layui.js"></script>
     <script>
+        // jquery
+        function loadPassageInfo() {
+            var mark = document.getElementsByClassName("mark")[0];
+            console.log(mark)
+            mark.style.display = "block"
+        }
+        function closeDialog() {
+            var mark = document.getElementsByClassName("mark")[0];
+            mark.style.display = "none"
+        }
+
         //    分页
         layui.use(["laypage", "layer"], function () {
             var laypage = layui.laypage,

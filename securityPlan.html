@@ -73,16 +73,16 @@
                 </div>
 
                 <div class="layui-col-md9 btn-item" style="padding-left: 15px;" id="btn3">
-                  <button class="layui-btn layui-btn-primary">1-5天</button>
-                  <button class="layui-btn layui-btn-primary">6-8天</button>
-                  <button class="layui-btn layui-btn-primary">9-15天</button>
-                  <button class="layui-btn layui-btn-primary">16-20天</button>
-                  <button class="layui-btn layui-btn-primary">21-25天</button>
-                  <button class="layui-btn layui-btn-primary">26-30天</button>
-                  <button class="layui-btn layui-btn-primary">31-60天</button>
-                  <button class="layui-btn layui-btn-primary">61-90天</button>
-                  <button class="layui-btn layui-btn-primary">91-180天</button>
-                  <button class="layui-btn layui-btn-primary">一年（每次旅行最长天数90天）</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="1-5天">1-5天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="6-8天">6-8天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="9-15天">9-15天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="16-20天">16-20天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="21-25天">21-25天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="26-30天">26-30天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="31-60天">31-60天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="61-90天">61-90天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="91-180天">91-180天</button>
+                  <button class="layui-btn layui-btn-primary" data-temple="一年（每次旅行最长天数90天）">一年（每次旅行最长天数90天）</button>
 
                 </div>
               </div>
@@ -146,7 +146,7 @@
             <div class="layui-col-md7">
               1. 针对台湾出游新政策，低价享百万出行保障。
             </div>
-            
+
             <div class="layui-col-md7">
               2. 7x24小时全球紧急医疗救援服务。
             </div>
@@ -171,7 +171,7 @@
             <div class="layui-col-md7">
               1. 本产品承保的被保险人投保年龄时的年龄应为出生满60天至90周岁。
             </div>
-            
+
             <div class="layui-col-md7">
               2.未满18周岁的未成年人的身故保险金额不超过保监会规定的限额。
             </div>
@@ -194,54 +194,70 @@
               8.未满18周岁的未成年人的身故保险金额不超过保监会规定的限额。
             </div>
           </div>
-          
+
         </div>
       </div>
-<div style="height: 40px;"></div>
+      <div style="height: 40px;"></div>
     </div>
   </div>
 
   <!-- <div id="demo0" class="pagnation"></div> -->
   <div class="mark" style="display: none;">
-      <div class="dialog">
-          <p class="title">周边短途游-安联境内旅行保障计划比对
-            <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeDialog()">X</span>
-          </p>
+    <div class="dialog" style="padding-right: 0px;">
+      <p class="title">周边短途游-安联境内旅行保障计划比对
+        <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeDialog()">X</span>
+      </p>
 
-          <table class="layui-table" lay-size="lg">
-              <colgroup>
-                  <col width="150">
-                  <col width="200">
-                  <col>
-              </colgroup>
-              <thead>
-                  <tr>
-                      <th>保障利益</th>
-                      <th>保险金额（人民币）<br>安联境内旅游保障计划一</th>
-                      <th>安联境内旅游保障计划一</th>
-                      <th>安联境内旅游保障计划一</th>
-                      <th>安联境内旅游保障计划一</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>意外身故及伤残</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                  </tr>
-                  <tr>
-                      <td>公共交通工具意外身故及伤残</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                      <td>100,000</td>
-                  </tr>
-              </tbody>
-          </table>
+      <table class="layui-table" lay-size="lg">
+        <colgroup>
+          <col width="150">
+          <col width="200">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>保障利益</th>
+            <th>保险金额（人民币）<br>安联境内旅游保障计划一</th>
+            <th>安联境内旅游保障计划一</th>
+            <th>安联境内旅游保障计划一</th>
+            <th>安联境内旅游保障计划一</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>意外身故及伤残</td>
+            <td>100,000</td>
+            <td>100,000</td>
+            <td>100,000</td>
+            <td>100,000</td>
+          </tr>
+          <tr>
+            <td>公共交通工具意外身故及伤残</td>
+            <td>100,000</td>
+            <td>100,000</td>
+            <td>100,000</td>
+            <td>100,000</td>
+          </tr>
+        </tbody>
+      </table>
 
+    </div>
+  </div>
+  <!-- 按钮弹窗 -->
+  <div class="mark btnmask" style="display: none;">
+    <div class="dialog">
+      <p class="title">天数选择
+        <span style="float: right;font-size: 24px;cursor:pointer" onclick="closeDialog()">X</span>
+      </p>
+
+      <div class="layui-row" style="margin-top: 20px;" id="btngroup">
+        <button class="layui-btn layui-btn-primary">1天</button>
+        <button class="layui-btn layui-btn-primary">2天</button>
+        <button class="layui-btn layui-btn-primary">3天</button>
+        <button class="layui-btn layui-btn-primary">4天</button>
+        <button class="layui-btn layui-btn-primary">5天</button>
       </div>
+    </div>
   </div>
   <div class="foot">
     <div class="foot-c">
@@ -271,31 +287,53 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
   <script>
     // jQuery
-    $("#btn1").children().click(function () {
-  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
-    color:"#555",background:"#fff"
-  })
-  })
-  $("#btn2").children().click(function () {
-  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
-    color:"#555",background:"#fff"
-  })
-  })
-  $("#btn3").children().click(function () {
-  $(this).css({color:"#fff",background:"#1E9FFF"}).siblings().css({
-    color:"#555",background:"#fff"
-  })
-  })
+let temp = ''; //存储内容
 
-  function loadPassageInfo() {
-            var mark = document.getElementsByClassName("mark")[0];
-            console.log(mark)
-            mark.style.display = "block"
-        }
-        function closeDialog() {
-            var mark = document.getElementsByClassName("mark")[0];
-            mark.style.display = "none"
-        }
+    $("#btn1").children().click(function () {
+      $(this).css({ color: "#fff", background: "#1E9FFF" }).siblings().css({
+        color: "#555", background: "#fff"
+      })
+    })
+    $("#btn2").children().click(function () {
+      $(this).css({ color: "#fff", background: "#1E9FFF" }).siblings().css({
+        color: "#555", background: "#fff"
+      })
+    })
+    $("#btn3").children().click(function () {
+      $("#btn3").children().each(function(i){
+        $(this).text($(this).data("temple"))
+      })
+      $(this).css({ color: "#fff", background: "#1E9FFF" }).addClass("select").siblings().css({
+        color: "#555", background: "#fff"
+      }).removeClass("select")
+      
+      openBtn();
+    })
+
+    $("#btngroup button").on('click',function(){
+         let content =  $(this).text();
+         $("#btn3").children(".select").text(content) 
+         closeBtn()
+    })
+
+    function loadPassageInfo() {
+      var mark = document.getElementsByClassName("mark")[0];
+      console.log(mark)
+      mark.style.display = "block"
+    }
+    function closeDialog() {
+      var mark = document.getElementsByClassName("mark")[0];
+      mark.style.display = "none"
+    }
+    function openBtn() {
+      var mark = document.getElementsByClassName("btnmask")[0];
+      console.log(mark)
+      mark.style.display = "block"
+    }
+    function closeBtn() {
+      var mark = document.getElementsByClassName("btnmask")[0];
+      mark.style.display = "none"
+    }
     // -------
     layui.use(['laypage', 'layer'], function () {
       var laypage = layui.laypage
