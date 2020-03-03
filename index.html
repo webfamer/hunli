@@ -24,7 +24,11 @@
             <li>首页</li>
             <li>保险查询</li>
             <li>我的订单</li>
-            <li>我的设置</li>
+            <li><ul class="downMenu" style="float: none;">
+              <li>我的设置</li>
+              <li style="display: none;" class="list2">登陆信息</li>
+              <li class="list3" style="display: none;">保险人管理</li>
+            </ul></li>
           </ul>
         </div>
         </div>
@@ -216,9 +220,22 @@ layui.use(['laypage', 'layer'], function(){
     }
   });
   
-  
-  
-
+  //二级菜单下拉
+  $(function(){ 
+        $(".nav>li").hover(function(){ 
+            $(this).children('ul').stop(true,true).show(300); 
+        },function(){ 
+            $(this).children('ul').stop(true,true).hide(300); 
+        }) 
+    }) 
+    $(function(){ 
+        $(".downMenu").hover(function(){
+          $(this).children().show("slow")
+        },function(){
+          $(this).children(".list3").hide('slow');
+          $(this).children(".list2").hide('slow');
+        })
+    }) 
 
   
   //调用分页

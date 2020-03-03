@@ -37,6 +37,16 @@
   font-weight: 400;
   font-size: 18px;
 }
+.header .menu .menu-c ul li .downMenu {
+  cursor: pointer;
+}
+.header .menu .menu-c ul li .downMenu li {
+  width: 100px;
+  text-align: center;
+  line-height: 50px;
+  float: none;
+  background: #fff;
+}
 
 .main {
   background: #F5F7FA;
